@@ -2,56 +2,42 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Conheça a finalidade da coleta de informações antes de utilizar recursos de saúde.">
-  <title>Consentimento de dados | MedMap</title>
-  <link rel="stylesheet" href="{% static 'css/MedMapBase.css' %}">
-  <link rel="stylesheet" href="{% static 'css/ConsentimentoDados.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consentimento de Dados - MedMap</title>
+    <link rel="stylesheet" href="{% static 'css/ConsentimentoDados.css' %}">
 </head>
 <body>
-  <header class="site-header"><div class="header-inner">
-    <a class="brand" href="{% url 'home' %}">MedMap</a>
-    <nav class="header-links" aria-label="Menu principal">
-      <a href="{% url 'home' %}">Início</a>
-      
-      
-      
-      <a href="{% url 'ComoUsar' %}">Como usar</a>
+    <nav>
+        <h2>MedMap</h2>
+        <div class="navegacao">
+            <a href="{% url 'home' %}">Início</a>
+            <a href="{% url 'ComoUsar' %}">Como usar</a>
+        </div>
     </nav>
-  </div></header>
-  <main class="container">
-    <div class="page-head"><p class="eyebrow">Seu cuidado, do seu jeito</p><h1>Consentimento de dados</h1><p class="subtitle">Conheça a finalidade da coleta de informações antes de utilizar recursos de saúde.</p></div>
-    
-  <div class="two-col">
-    <section class="panel" aria-labelledby="termos"><h2 id="termos">Uso responsável dos dados</h2>
-      <p>O MedMap foi concebido para organizar informações fornecidas pelo usuário e apoiar a conversa com profissionais de saúde. Dados de saúde são sensíveis e exigem cuidados especiais.</p>
-      <div class="notice">Protótipo acadêmico: esta tela não representa uma implementação completa de consentimento nem armazena suas escolhas.</div>
-      <div class="purpose"><h3>Informações que poderão ser utilizadas</h3><p>Dados de cadastro, hábitos, histórico familiar e preferências, somente após implementação de mecanismos adequados de segurança e privacidade.</p></div>
-      <div class="purpose"><h3>Finalidade prevista</h3><p>Organizar um plano de acompanhamento preventivo e permitir que a pessoa consulte seus próprios registros.</p></div>
-      <form id="form-consentimento">
-        <fieldset><legend>Suas escolhas</legend>
-          <div class="option-list">
-            <label class="option"><input type="checkbox" name="consentimento_saude" required>Entendi a finalidade proposta para o tratamento de informações de saúde e concordo com seu uso no contexto apresentado.</label>
-            <label class="option"><input type="checkbox" name="comunicacoes">Desejo receber comunicações informativas do MedMap (opcional).</label>
-          </div>
-        </fieldset>
-        <div class="actions"><button type="submit" class="btn">Confirmar nesta demonstração</button><a class="btn secondary" href="{% url 'home' %}">Voltar</a></div>
-        <p class="feedback" id="feedback-consentimento" role="status" aria-live="polite"></p>
-      </form>
-    </section>
-    <aside class="panel" aria-labelledby="privacidade"><h2 id="privacidade">Transparência e privacidade</h2>
-      <ul class="list-clean"><li>Explicar para que cada informação é solicitada.</li><li>Permitir revisão e retirada de consentimento quando o recurso for implementado.</li><li>Evitar coletar dados que não sejam necessários.</li><li>Não utilizar informações clínicas reais neste protótipo.</li></ul>
-      <p class="demo-note">A conformidade com a LGPD depende de medidas legais e técnicas adicionais, além desta interface.</p>
-    </aside>
-  </div>
-  <script>
-    document.getElementById('form-consentimento').addEventListener('submit', function(event) {
-      event.preventDefault();
-      document.getElementById('feedback-consentimento').textContent = 'Escolha exibida apenas nesta demonstração; nenhum consentimento foi registrado.';
-    });
-  </script>
-  </main>
-  <footer class="site-footer">MedMap · Projeto acadêmico de saúde preventiva · PUC-Rio</footer>
+    <main>
+        <h1>Consentimento de dados</h1>
+        <p>Entenda como as informações de saúde poderão ser utilizadas pelo MedMap.</p>
+        <section class="caixa">
+            <h2>Quais dados serão solicitados?</h2>
+            <p>O perfil poderá reunir informações pessoais, hábitos de saúde e histórico familiar para organizar seus cuidados preventivos.</p>
+            <h2>Para que serão utilizados?</h2>
+            <p>O objetivo é reunir seus registros e ajudar a acompanhar exames, vacinas e consultas. O sistema não substitui profissionais de saúde.</p>
+            <h2>Suas escolhas</h2>
+            <form>
+                <label class="opcao">
+                    <input type="checkbox" required>
+                    <span>Concordo com o uso dos meus dados de saúde para as finalidades descritas acima.</span>
+                </label>
+                <label class="opcao">
+                    <input type="checkbox">
+                    <span>Desejo receber lembretes e informações do MedMap (opcional).</span>
+                </label>
+                <button type="button" disabled>Confirmar consentimento (em breve)</button>
+            </form>
+        </section>
+        <p class="aviso">Tela demonstrativa: nenhuma escolha é registrada. A coleta real de dados dependerá de mecanismos de segurança e privacidade.</p>
+    </main>
+    <footer>MedMap - seu mapa de saúde preventiva</footer>
 </body>
 </html>
