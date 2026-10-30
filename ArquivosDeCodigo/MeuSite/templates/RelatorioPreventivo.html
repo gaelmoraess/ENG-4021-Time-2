@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Modelo de relatório preventivo para impressão no MedMap">
+  <title>Relatório Preventivo | MedMap</title>
+  <link rel="stylesheet" href="{% static 'css/MedMapBase.css' %}">
+  <link rel="stylesheet" href="{% static 'css/RelatorioPreventivo.css' %}">
+</head>
+<body>
+  <header class="site-header no-print"><div class="header-inner">
+    <a class="brand" href="{% url 'home' %}">MedMap</a>
+    <nav class="header-links" aria-label="Menu principal">
+      <a href="{% url 'home' %}">Início</a>
+      
+      
+      <a href="{% url 'RelatorioPreventivo' %}" aria-current="page">Relatório</a>
+      <a href="{% url 'ComoUsar' %}">Como usar</a>
+    </nav>
+  </div></header>
+  <main class="container">
+    <div class="page-head no-print"><p class="eyebrow">Preparação de documentos</p><h1>Relatório Preventivo</h1><p class="subtitle">Visualize um relatório de exemplo e use a função de impressão do navegador.</p></div>
+    <div class="notice no-print">Este é um modelo demonstrativo com informações fictícias. Ele não consulta nem exporta dados reais do usuário.</div>
+    <article class="report panel" aria-labelledby="titulo-relatorio">
+      <div class="report-head"><div><p class="eyebrow">MedMap · Modelo</p><h2 id="titulo-relatorio">Resumo de Saúde Preventiva</h2><p class="muted">Relatório de demonstração · Dados fictícios</p></div><span class="stamp">EXEMPLO</span></div>
+      <section aria-labelledby="sec-perfil"><h3 id="sec-perfil">1. Perfil</h3>
+        <dl class="data-list"><div><dt>Identificação</dt><dd>Pessoa fictícia</dd></div><div><dt>Faixa etária</dt><dd>Não informada</dd></div><div><dt>Informações clínicas</dt><dd>Não utilizadas</dd></div><div><dt>Origem dos dados</dt><dd>Conteúdo ilustrativo</dd></div></dl>
+      </section>
+      <section aria-labelledby="sec-acompanhamento"><h3 id="sec-acompanhamento">2. Itens para conversar com um profissional</h3>
+        <table><caption>Exemplos, não prescrições nem agendamentos</caption><thead><tr><th scope="col">Área</th><th scope="col">Objetivo</th><th scope="col">Status</th></tr></thead>
+        <tbody><tr><td>Consultas</td><td>Avaliar necessidades individuais</td><td>Exemplo</td></tr><tr><td>Exames</td><td>Verificar critérios de rastreamento</td><td>Exemplo</td></tr><tr><td>Vacinas</td><td>Revisar histórico vacinal</td><td>Exemplo</td></tr></tbody></table>
+      </section>
+      <section aria-labelledby="sec-orientacao"><h3 id="sec-orientacao">3. Observações</h3><p>Este modelo demonstra a organização de informações. Recomendações personalizadas, datas e registros somente poderão ser exibidos após uma implementação com dados autorizados e regras verificadas.</p></section>
+      <div class="report-warning">Documento demonstrativo, sem valor clínico. Não substitui avaliação de profissional de saúde.</div>
+    </article>
+    <div class="actions no-print"><button id="imprimir" type="button" class="btn">Imprimir ou salvar como PDF</button></div>
+    <p class="demo-note no-print">A função “Salvar como PDF” depende da opção disponível na janela de impressão do seu navegador. Não há gerador de PDF no servidor.</p>
+  </main>
+  <footer class="site-footer no-print">MedMap · Projeto acadêmico de saúde preventiva · PUC-Rio</footer>
+  <script>
+    document.getElementById('imprimir').addEventListener('click', function () { window.print(); });
+  </script>
+</body>
+</html>
