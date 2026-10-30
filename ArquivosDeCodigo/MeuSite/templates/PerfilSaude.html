@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Organize as informações que poderão compor seu plano preventivo.">
+  <title>Perfil de saúde | MedMap</title>
+  <link rel="stylesheet" href="{% static 'css/MedMapBase.css' %}">
+  <link rel="stylesheet" href="{% static 'css/PerfilSaude.css' %}">
+</head>
+<body>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="{% url 'home' %}">MedMap</a>
+    <nav class="header-links" aria-label="Menu principal">
+      <a href="{% url 'home' %}">Início</a>
+      <a href="{% url 'PerfilSaude' %}" aria-current="page">Perfil</a>
+      
+      
+      <a href="{% url 'ComoUsar' %}">Como usar</a>
+    </nav>
+  </div></header>
+  <main class="container">
+    <div class="page-head"><p class="eyebrow">Seu cuidado, do seu jeito</p><h1>Perfil de saúde</h1><p class="subtitle">Organize as informações que poderão compor seu plano preventivo.</p></div>
+    
+  <div class="two-col">
+    <section class="panel" aria-labelledby="dados-perfil"><h2 id="dados-perfil">Seus dados</h2>
+      <p class="notice">Este é um protótipo visual. Nada preenchido nesta página é enviado ou salvo.</p>
+      <form id="form-perfil">
+        <div class="form-grid">
+          <div class="field full"><label for="nome">Nome completo</label><input id="nome" name="nome" type="text" autocomplete="name" placeholder="Ex.: Maria Silva" required></div>
+          <div class="field"><label for="nascimento">Data de nascimento</label><input id="nascimento" name="nascimento" type="date" required></div>
+          <div class="field"><label for="telefone">Telefone (opcional)</label><input id="telefone" name="telefone" type="tel" autocomplete="tel" placeholder="(21) 99999-9999"></div>
+          <div class="field full"><label for="objetivo">O que você deseja acompanhar?</label>
+            <select id="objetivo" name="objetivo"><option value="">Selecione</option><option>Consultas preventivas</option><option>Exames de rotina</option><option>Vacinação</option><option>Organização geral</option></select>
+          </div>
+          <div class="field full"><fieldset><legend>Hábitos (opcional)</legend>
+            <div class="habitos">
+              <label class="option"><input type="checkbox" name="habitos" value="atividade">Pratico atividades físicas</label>
+              <label class="option"><input type="checkbox" name="habitos" value="tabaco">Uso tabaco</label>
+              <label class="option"><input type="checkbox" name="habitos" value="alcool">Consumo bebidas alcoólicas</label>
+            </div>
+          </fieldset></div>
+          <div class="field full"><label for="observacoes">Observações (opcional)</label><textarea id="observacoes" name="observacoes" placeholder="Informações que você gostaria de conversar com um profissional de saúde."></textarea></div>
+        </div>
+        <div class="actions"><button class="btn" type="submit">Visualizar preenchimento</button><a class="btn secondary" href="{% url 'HistoricoFamiliar' %}">Histórico familiar</a></div>
+        <p id="feedback-perfil" class="feedback" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    <aside class="panel" aria-labelledby="proximos-passos"><span class="pill">Etapa inicial</span><h2 id="proximos-passos" class="top-gap">Para que serve este perfil?</h2>
+      <ul class="list-clean"><li>Organizar dados do usuário em um só lugar.</li><li>Preparar a futura personalização do Check-up Inteligente.</li><li>Facilitar a atualização do histórico de saúde.</li></ul>
+      <div class="demo-note">Dados sensíveis exigem proteção e consentimento adequados antes de qualquer armazenamento real.</div>
+    </aside>
+  </div>
+  <script>
+    document.getElementById('form-perfil').addEventListener('submit', function(event) {
+      event.preventDefault();
+      document.getElementById('feedback-perfil').textContent = 'Formulário demonstrado. A gravação dos dados depende de integração futura com o Django.';
+    });
+  </script>
+  </main>
+  <footer class="site-footer">MedMap · Projeto acadêmico de saúde preventiva · PUC-Rio</footer>
+</body>
+</html>

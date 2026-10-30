@@ -1,0 +1,3 @@
+.habitos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.top-gap{margin-top:18px}
+@media(max-width:550px){.habitos{grid-template-columns:1fr}}

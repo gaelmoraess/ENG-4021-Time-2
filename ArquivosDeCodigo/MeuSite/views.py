@@ -53,3 +53,7 @@ def ListarUsuarios(request):
 def CalendarioCuidados(request):
 
     return render(request, 'CalendarioCuidados.html')
+
+# Interface de Perfil de Saúde; dados não são persistidos.
+def PerfilSaude(request):
+    return render(request, 'PerfilSaude.html')
