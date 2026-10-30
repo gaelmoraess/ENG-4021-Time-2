@@ -57,4 +57,22 @@ def CalendarioCuidados(request):
 def MeusFamiliares(request):
 
     return render(request, 'MeusFamiliares.html')
-    
+
+def PerfilSaude(request):
+    return render(request, 'PerfilSaude.html')
+
+
+def ConsentimentoDados(request):
+    return render(request, 'ConsentimentoDados.html')
+
+
+def PreferenciasNotificacoes(request):
+    return render(request, 'PreferenciasNotificacoes.html')
+
+
+def CheckupInteligente(request):
+    return render(request, 'CheckupInteligente.html')
+
+
+def RelatorioPreventivo(request):
+    return render(request, 'RelatorioPreventivo.html')
