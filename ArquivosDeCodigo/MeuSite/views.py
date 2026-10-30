@@ -65,3 +65,7 @@ def PerfilSaude(request):
 # Página de consentimento de dados (interface demonstrativa).
 def ConsentimentoDados(request):
     return render(request, 'ConsentimentoDados.html')
+
+# Preferências de notificações (interface demonstrativa).
+def PreferenciasNotificacoes(request):
+    return render(request, 'PreferenciasNotificacoes.html')
