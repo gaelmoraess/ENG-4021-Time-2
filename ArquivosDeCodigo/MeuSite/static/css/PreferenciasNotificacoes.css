@@ -1,0 +1,5 @@
+.notification-options{display:grid;gap:12px}
+.notification-item{background:#fbfefd;padding:15px;border:1px solid var(--line);border-radius:10px}
+.notification-item span{display:grid;gap:3px}
+.notification-item small{font-size:.86rem;color:var(--muted)}
+.spacing-top,.top-gap{margin-top:20px}
