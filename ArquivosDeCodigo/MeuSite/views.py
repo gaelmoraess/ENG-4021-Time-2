@@ -53,3 +53,7 @@ def ListarUsuarios(request):
 def CalendarioCuidados(request):
 
     return render(request, 'CalendarioCuidados.html')
+
+# Interface da Sprint 6 (apenas protótipo visual).
+def ConsentimentoDados(request):
+    return render(request, 'ConsentimentoDados.html')

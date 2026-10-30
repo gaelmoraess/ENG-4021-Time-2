@@ -1,0 +1,4 @@
+.purpose{border:1px solid var(--line);background:#fbfefd;border-radius:10px;padding:14px 16px;margin:14px 0}
+.purpose h3{color:var(--green)}
+.purpose p{margin:0}
+fieldset{margin-top:20px}
