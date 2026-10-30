@@ -69,3 +69,7 @@ def ConsentimentoDados(request):
 # Preferências de notificações (interface demonstrativa).
 def PreferenciasNotificacoes(request):
     return render(request, 'PreferenciasNotificacoes.html')
+
+# View para renderizar a tela do Check-up Inteligente.
+def CheckupInteligente(request):
+    return render(request, 'CheckupInteligente.html')

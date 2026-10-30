@@ -49,4 +49,5 @@ urlpatterns = [
     path('PerfilSaude/', views.PerfilSaude, name='PerfilSaude'),
     path('ConsentimentoDados/', views.ConsentimentoDados, name='ConsentimentoDados'),
     path('PreferenciasNotificacoes/', views.PreferenciasNotificacoes, name='PreferenciasNotificacoes'),
+    path('CheckupInteligente/', views.CheckupInteligente, name='CheckupInteligente'),
 ]
