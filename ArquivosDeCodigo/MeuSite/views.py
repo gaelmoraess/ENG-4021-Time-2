@@ -57,3 +57,7 @@ def CalendarioCuidados(request):
 # View de renderização de interface — Sprint 7.
 def RelatorioPreventivo(request):
     return render(request, 'RelatorioPreventivo.html')
+
+# Interface de Perfil de Saúde; dados não são persistidos.
+def PerfilSaude(request):
+    return render(request, 'PerfilSaude.html')
