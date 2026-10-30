@@ -47,13 +47,12 @@ button {
     width: 100%;
     border: 0;
     border-radius: 5px;
-    background: #0f675b;
+    background: #92b4aa;
     color: white;
     font: inherit;
     font-weight: bold;
-    cursor: pointer;
+    cursor: not-allowed;
 }
-button:hover { background: #0b5046; }
 .aviso { font-size: 14px; color: #55736c; }
 footer { text-align: center; padding: 20px; color: #55736c; }
 @media (max-width: 600px) {
