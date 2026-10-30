@@ -55,5 +55,21 @@ def CalendarioCuidados(request):
     return render(request, 'CalendarioCuidados.html')
 
 # View de renderização de interface — Sprint 7.
+def RelatorioPreventivo(request):
+    return render(request, 'RelatorioPreventivo.html')
+
+# Interface de Perfil de Saúde; dados não são persistidos.
+def PerfilSaude(request):
+    return render(request, 'PerfilSaude.html')
+
+# Página de consentimento de dados (interface demonstrativa).
+def ConsentimentoDados(request):
+    return render(request, 'ConsentimentoDados.html')
+
+# Preferências de notificações (interface demonstrativa).
+def PreferenciasNotificacoes(request):
+    return render(request, 'PreferenciasNotificacoes.html')
+
+# View para renderizar a tela do Check-up Inteligente.
 def CheckupInteligente(request):
     return render(request, 'CheckupInteligente.html')
