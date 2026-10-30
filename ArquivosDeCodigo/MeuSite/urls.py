@@ -43,4 +43,8 @@ urlpatterns = [
     path('HistoricoFamiliar/', views.HistoricoFamiliar, name='HistoricoFamiliar' ),
 
     path('ListarUsuarios/',views.ListarUsuarios, name='ListarUsuarios' ),
+
+    path('PerfilSaude/', views.PerfilSaude, name='PerfilSaude'),
+    path('ConsentimentoDados/', views.ConsentimentoDados, name='ConsentimentoDados'),
+    path('PreferenciasNotificacoes/', views.PreferenciasNotificacoes, name='PreferenciasNotificacoes'),
 ]

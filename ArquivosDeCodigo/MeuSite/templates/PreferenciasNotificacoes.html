@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Escolha quais lembretes gostaria de receber quando os avisos estiverem disponíveis.">
+  <title>Preferências de notificações | MedMap</title>
+  <link rel="stylesheet" href="{% static 'css/MedMapBase.css' %}">
+  <link rel="stylesheet" href="{% static 'css/PreferenciasNotificacoes.css' %}">
+</head>
+<body>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="{% url 'home' %}">MedMap</a>
+    <nav class="header-links" aria-label="Menu principal">
+      <a href="{% url 'home' %}">Início</a>
+      <a href="{% url 'PerfilSaude' %}" >Perfil</a>
+      <a href="{% url 'CheckupInteligente' %}" >Check-up</a>
+      <a href="{% url 'RelatorioPreventivo' %}" >Relatório</a>
+      <a href="{% url 'ComoUsar' %}">Como usar</a>
+    </nav>
+  </div></header>
+  <main class="container">
+    <div class="page-head"><p class="eyebrow">Seu cuidado, do seu jeito</p><h1>Preferências de notificações</h1><p class="subtitle">Escolha quais lembretes gostaria de receber quando os avisos estiverem disponíveis.</p></div>
+    
+  <div class="two-col">
+    <section class="panel" aria-labelledby="seus-lembretes"><h2 id="seus-lembretes">Configurar lembretes</h2>
+      <p class="notice">Interface de demonstração: nenhum e-mail é enviado e as opções ainda não são persistidas.</p>
+      <form id="form-notificacoes">
+        <fieldset><legend>Quais avisos deseja acompanhar?</legend>
+          <div class="notification-options">
+            <label class="option notification-item"><input type="checkbox" name="avisos" value="consultas" checked><span><strong>Consultas</strong><small>Alertas sobre compromissos futuros</small></span></label>
+            <label class="option notification-item"><input type="checkbox" name="avisos" value="exames" checked><span><strong>Exames</strong><small>Organização de exames agendados</small></span></label>
+            <label class="option notification-item"><input type="checkbox" name="avisos" value="vacinas"><span><strong>Vacinas</strong><small>Lembretes de doses cadastradas</small></span></label>
+          </div>
+        </fieldset>
+        <div class="form-grid spacing-top">
+          <div class="field"><label for="antecedencia">Antecedência desejada</label><select id="antecedencia" name="antecedencia"><option>1 dia antes</option><option>3 dias antes</option><option>7 dias antes</option></select></div>
+          <div class="field"><label for="canal">Canal preferido</label><select id="canal" name="canal"><option>E-mail (planejado)</option><option>Painel do site (planejado)</option></select></div>
+          <div class="field full"><label for="email-notificacao">E-mail para lembretes</label><input type="email" id="email-notificacao" name="email" placeholder="voce@email.com" autocomplete="email"></div>
+        </div>
+        <div class="actions"><button class="btn" type="submit">Visualizar preferências</button><a class="btn secondary" href="{% url 'home' %}">Cancelar</a></div>
+        <p class="feedback" id="feedback-notificacoes" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    <aside class="panel" aria-labelledby="funcionamento-notif"><span class="pill">Recurso planejado</span><h2 class="top-gap" id="funcionamento-notif">Como funcionará?</h2>
+      <ol class="list-clean"><li>A pessoa registra consultas, exames ou vacinas.</li><li>Define quais eventos deseja acompanhar.</li><li>O sistema envia avisos quando houver integração com o serviço de notificações.</li></ol>
+      <p class="demo-note">Este card não implementa API, agendamento automático ou envio real. Trata-se exclusivamente da tela HTML/CSS.</p>
+    </aside>
+  </div>
+  <script>
+    document.getElementById('form-notificacoes').addEventListener('submit', function(event) {
+      event.preventDefault();
+      document.getElementById('feedback-notificacoes').textContent = 'Preferências simuladas. O salvamento e o envio de avisos exigem integração futura.';
+    });
+  </script>
+  </main>
+  <footer class="site-footer">MedMap · Projeto acadêmico de saúde preventiva · PUC-Rio</footer>
+</body>
+</html>

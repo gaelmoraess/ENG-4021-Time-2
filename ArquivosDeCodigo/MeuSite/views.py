@@ -48,3 +48,13 @@ def HistoricoFamiliar(request):
 def ListarUsuarios(request):
 
     return render(request, 'ListarUsuarios.html')
+
+# Sprint 6: protótipos de interface, sem gravação de dados.
+def PerfilSaude(request):
+    return render(request, 'PerfilSaude.html')
+
+def ConsentimentoDados(request):
+    return render(request, 'ConsentimentoDados.html')
+
+def PreferenciasNotificacoes(request):
+    return render(request, 'PreferenciasNotificacoes.html')
