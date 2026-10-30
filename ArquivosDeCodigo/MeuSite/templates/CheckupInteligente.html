@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Exemplo demonstrativo de recomendações preventivas no MedMap">
+  <title>Check-up Inteligente | MedMap</title>
+  <link rel="stylesheet" href="{% static 'css/MedMapBase.css' %}">
+  <link rel="stylesheet" href="{% static 'css/CheckupInteligente.css' %}">
+</head>
+<body>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="{% url 'home' %}">MedMap</a>
+    <nav class="header-links" aria-label="Menu principal">
+      <a href="{% url 'home' %}">Início</a>
+      
+      <a href="{% url 'CheckupInteligente' %}" aria-current="page">Check-up</a>
+      
+      <a href="{% url 'ComoUsar' %}">Como usar</a>
+    </nav>
+  </div></header>
+  <main class="container">
+    <div class="page-head">
+      <p class="eyebrow">Organização preventiva</p>
+      <h1>Check-up Inteligente</h1>
+      <p class="subtitle">Um exemplo de como o MedMap poderá organizar seus cuidados preventivos.</p>
+    </div>
+    <div class="notice" role="note"><strong>Demonstração:</strong> os itens apresentados são exemplos de interface, não recomendações individualizadas. O sistema ainda não analisa idade, hábitos ou histórico familiar.</div>
+    <section class="summary" aria-label="Resumo ilustrativo">
+      <div class="summary-item"><strong>3</strong><span>Categorias de cuidados</span></div>
+      <div class="summary-item"><strong>0</strong><span>Dados clínicos utilizados</span></div>
+      <div class="summary-item"><strong>Demo</strong><span>Modo ilustrativo</span></div>
+    </section>
+    <section aria-labelledby="titulo-cuidados">
+      <div class="section-heading"><h2 id="titulo-cuidados">Exemplos de cuidados</h2><label for="filtro">Filtrar categoria <select id="filtro"><option value="todos">Todas</option><option value="consulta">Consultas</option><option value="exame">Exames</option><option value="vacina">Vacinação</option></select></label></div>
+      <div class="care-grid" id="lista-cuidados">
+        <article class="panel care-card" data-categoria="consulta">
+          <span class="pill">Consulta</span>
+          <h3>Acompanhamento clínico</h3><p>Converse com um profissional para avaliar quais cuidados são apropriados para você.</p>
+          <p class="detail"><strong>Situação:</strong> exemplo, sem agendamento</p>
+        </article>
+        <article class="panel care-card" data-categoria="exame">
+          <span class="pill">Exame</span>
+          <h3>Exames preventivos</h3><p>A indicação de exames depende de avaliação individual e de diretrizes atualizadas.</p>
+          <p class="detail"><strong>Situação:</strong> exemplo, sem indicação automática</p>
+        </article>
+        <article class="panel care-card" data-categoria="vacina">
+          <span class="pill">Vacinação</span>
+          <h3>Verificação da carteira</h3><p>Confira sua situação vacinal com uma unidade de saúde ou profissional habilitado.</p>
+          <p class="detail"><strong>Situação:</strong> exemplo, sem verificação real</p>
+        </article>
+      </div>
+      <p id="contador" class="muted" role="status" aria-live="polite">3 categorias exibidas.</p>
+    </section>
+    <div class="actions"></div>
+    <p class="demo-note">As recomendações médicas individualizadas dependem de regras clínicas validadas, dados consentidos e implementação posterior. Esta página não substitui orientação profissional.</p>
+  </main>
+  <footer class="site-footer">MedMap · Projeto acadêmico de saúde preventiva · PUC-Rio</footer>
+  <script>
+    const filtro = document.getElementById('filtro');
+    const cards = Array.from(document.querySelectorAll('[data-categoria]'));
+    filtro.addEventListener('change', function () {
+      let visiveis = 0;
+      cards.forEach(function(card) {
+        const mostrar = filtro.value === 'todos' || card.dataset.categoria === filtro.value;
+        card.hidden = !mostrar;
+        if (mostrar) visiveis += 1;
+      });
+      document.getElementById('contador').textContent = visiveis + (visiveis === 1 ? ' categoria exibida.' : ' categorias exibidas.');
+    });
+  </script>
+</body>
+</html>
