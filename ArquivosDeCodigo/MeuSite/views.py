@@ -61,3 +61,7 @@ def RelatorioPreventivo(request):
 # Interface de Perfil de Saúde; dados não são persistidos.
 def PerfilSaude(request):
     return render(request, 'PerfilSaude.html')
+
+# Página de consentimento de dados (interface demonstrativa).
+def ConsentimentoDados(request):
+    return render(request, 'ConsentimentoDados.html')
