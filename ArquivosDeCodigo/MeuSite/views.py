@@ -53,3 +53,7 @@ def ListarUsuarios(request):
 def CalendarioCuidados(request):
 
     return render(request, 'CalendarioCuidados.html')
+
+# View de renderização de interface — Sprint 7.
+def RelatorioPreventivo(request):
+    return render(request, 'RelatorioPreventivo.html')
