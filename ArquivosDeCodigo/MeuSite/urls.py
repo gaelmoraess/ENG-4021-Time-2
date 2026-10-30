@@ -45,4 +45,8 @@ urlpatterns = [
     path('ListarUsuarios/',views.ListarUsuarios, name='ListarUsuarios' ),
 
     path('CalendarioCuidados/', views.CalendarioCuidados, name='CalendarioCuidados'),
+    path('RelatorioPreventivo/', views.RelatorioPreventivo, name='RelatorioPreventivo'),
+    path('PerfilSaude/', views.PerfilSaude, name='PerfilSaude'),
+    path('ConsentimentoDados/', views.ConsentimentoDados, name='ConsentimentoDados'),
+    path('PreferenciasNotificacoes/', views.PreferenciasNotificacoes, name='PreferenciasNotificacoes'),
 ]
