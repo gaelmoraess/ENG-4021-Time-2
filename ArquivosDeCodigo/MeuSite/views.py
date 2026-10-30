@@ -58,3 +58,10 @@ def ConsentimentoDados(request):
 
 def PreferenciasNotificacoes(request):
     return render(request, 'PreferenciasNotificacoes.html')
+
+# Sprint 7: renderização de protótipos (sem integração clínica ou banco de dados).
+def CheckupInteligente(request):
+    return render(request, 'CheckupInteligente.html')
+
+def RelatorioPreventivo(request):
+    return render(request, 'RelatorioPreventivo.html')
